@@ -21,5 +21,8 @@ Imports:
   purrr,
   stringi,
   jsonlite
-LinkingTo: Rcpp
+LinkingTo:
+  Rcpp,
+  RcppThread,
+  cpp11
 SystemRequirements: GNU make, GNU GCC, Go, C++11

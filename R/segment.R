@@ -9,11 +9,7 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 segment <- function(text, ...) {
-  json <- .Call(
-    "_segmentrr_segmenter",
-    PACKAGE = "segmentrr",
-    stringi::stri_enc_toutf8(text)
-  )
+  json <- segmenter(stringi::stri_enc_toutf8(text))
   res <- lapply(json, function(elem) {
     Encoding(elem) <- "UTF-8"
     return(jsonlite::fromJSON(elem, ...))
